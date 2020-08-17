@@ -17,7 +17,6 @@ class home extends Component {
       .catch((err) => console.log(err));
   }
   render() {
-    console.log(this.state.screams)
     let recentScreamsMarkup = this.state.screams ? (
       this.state.screams.map(scream => <Scream key={scream.screamId} scream={scream} />)
     ) : (
