@@ -19,7 +19,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3006 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,5 +39,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://europe-west1-social-app-7d922.cloudfunctions.net/api"
+  "proxy": "https://europe-west1-social-app-7d922.cloudfunctions.net/api",
+  "devDependencies": {
+    "@material-ui/icons": "^4.9.1"
+  }
 }
