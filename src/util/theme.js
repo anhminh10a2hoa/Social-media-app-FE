@@ -39,4 +39,9 @@ export default {
       position: "absolute",
     },
   },
+  editUserDetails: {
+    button: {
+      float: "right"
+    }
+  }
 }
