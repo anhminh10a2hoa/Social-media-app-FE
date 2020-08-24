@@ -1,7 +1,6 @@
 html,
 body {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   background-color: rgb(245, 245, 245);
 }
 
@@ -12,6 +11,10 @@ body {
 
 .nav-container {
   margin: auto;
+}
+
+.nav-container svg {
+  color: #fff;
 }
 
 a {
