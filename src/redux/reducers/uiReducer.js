@@ -1,4 +1,4 @@
-import {SET_ERRORS, CLEAR_ERRORS, LOADING_UI} from "../types";
+import {SET_ERRORS, CLEAR_ERRORS, LOADING_UI, LIKE_SCREAM, UNLIKE_SCREAM} from "../types";
 
 const initialState = {
   loading: false,
