@@ -43,5 +43,18 @@ export default {
     button: {
       float: "right"
     }
+  },
+  postUserDetails: {
+    submitButton: {
+      position: "relative",
+    },
+    progressSpinner: {
+      position: "relative",
+    },
+    closeButton: {
+      position: "absolute",
+      left: "90%",
+      top: "10%"
+    }
   }
 }
