@@ -8,6 +8,7 @@ import {likeScream, unlikeScream} from '../redux/actions/dataActions';
 import MyButton from '../util/MyButton';
 import DeleteScream from "./DeleteScream";
 import ScreamDialog from "./ScreamDialog";
+import LikeButton from "./LikeButton";
 // MUI Stuff
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -37,22 +38,6 @@ const styles = {
 };
 
 class Scream extends Component {
-  likedScream = () => {
-    if (
-      this.props.user.likes &&
-      this.props.user.likes.find(
-        (like) => like.screamId === this.props.scream.screamId
-      )
-    )
-      return true;
-    else return false;
-  };
-  likeScream = () => {
-    this.props.likeScream(this.props.scream.screamId);
-  }
-  unlikeScream = () => {
-    this.props.unlikeScream(this.props.scream.screamId);
-  }
   render() {
     dayjs.extend(relativeTime);
     const {
@@ -71,23 +56,6 @@ class Scream extends Component {
         credentials: { handle} 
       }
     } = this.props;
-    const likeButton = !authenticated ? (
-      <MyButton tip="Like">
-        <Link to="/login">
-          <FavoriteBorderIcon color="primary" />
-        </Link>
-      </MyButton>
-    ) : (
-      this.likedScream() ? (
-        <MyButton tip="Undo like" onClick={this.unlikeScream}>
-          <FavoriteIcon color="primary" />
-        </MyButton>
-      ) : (
-        <MyButton tip="Undo like" onClick={this.likeScream}>
-          <FavoriteBorderIcon color="primary" />
-        </MyButton>
-      )
-    )
     const deleteButton = authenticated && userHandle === handle ? (
       <DeleteScream screamId={screamId} />
     ) : null
@@ -112,7 +80,7 @@ class Scream extends Component {
             {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
-          {likeButton}
+          <LikeButton screamId={screamId}/>
           <span>{likeCount} Likes</span>
           <MyButton tip="comments">
             <ChatIcon color="primary"/>
