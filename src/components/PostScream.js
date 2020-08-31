@@ -4,8 +4,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import MyButton from "../util/MyButton";
 
 //MUI STUFF
-import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
 import Button from '@material-ui/core/Button';
 import TextField from "@material-ui/core/TextField";
 import Dialog from '@material-ui/core/Dialog';
@@ -16,7 +14,7 @@ import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
 
 import {connect} from "react-redux"
-import {postScream} from "../redux/actions/dataActions"
+import {postScream, clearErrors} from "../redux/actions/dataActions"
 
 const styles = (theme) => ({
   ...theme.postUserDetails,
@@ -42,6 +40,7 @@ class PostScream extends Component {
     this.setState({ open: true})
   }
   handleClose = () => {
+    this.props.clearErrors();
     this.setState({ open: false, errors: {}})
   }
   handleChange = (event) => {
@@ -97,6 +96,7 @@ class PostScream extends Component {
 
 PostScream.propTypes = {
   postScream: PropTypes.func.isRequired,
+  clearErrors: PropTypes.func.isRequired,
   UI: PropTypes.object.isRequired
 }
 
@@ -104,4 +104,4 @@ const mapStateToProps = (state) => ({
   UI: state.UI
 })
 
-export default connect(mapStateToProps, {postScream})(withStyles(styles)(PostScream))
+export default connect(mapStateToProps, {postScream, clearErrors})(withStyles(styles)(PostScream))

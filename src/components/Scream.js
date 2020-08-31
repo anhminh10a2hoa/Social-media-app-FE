@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import {likeScream, unlikeScream} from '../redux/actions/dataActions';
 import MyButton from '../util/MyButton';
 import DeleteScream from "./DeleteScream";
+import ScreamDialog from "./ScreamDialog";
 // MUI Stuff
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -27,6 +28,7 @@ const styles = {
   },
   image: {
     minWidth: 200,
+    maxHeight: 200,
   },
   content: {
     padding: 25,
@@ -116,6 +118,7 @@ class Scream extends Component {
             <ChatIcon color="primary"/>
           </MyButton>
           <span>{commentCount} Comments</span>
+          <ScreamDialog screamId={screamId} userHandle={userHandle} />
         </CardContent>
       </Card>
     );

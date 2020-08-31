@@ -47,14 +47,40 @@ export default {
   postUserDetails: {
     submitButton: {
       position: "relative",
+      float: "right",
+      margin: 10
     },
     progressSpinner: {
-      position: "relative",
+      position: "absolute",
     },
     closeButton: {
       position: "absolute",
-      left: "90%",
-      top: "10%"
+      left: "91%",
+      top: "6%"
+    }
+  },
+  getScream: {
+    profileImage: {
+      maxWidth: 200,
+      height: 200,
+      borderRadius: '50%',
+      objectFit: 'cover'
+    },
+    dialogContent: {
+      padding: 20
+    },
+    closeButton: {
+      position: 'absolute',
+      left: '90%'
+    },
+    expandButton: {
+      position: 'absolute',
+      left: '90%'
+    },
+    spinnerDiv: {
+      textAlign: 'center',
+      marginTop: 50,
+      marginBottom: 50
     }
   }
 }
