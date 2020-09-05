@@ -9,16 +9,16 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = (theme) => ({
   ...theme.commentScream,
-  
+
 })
 
 class Comments extends Component {
   render() {
-    const {comments, classes} = this.props;
+    const { comments, classes } = this.props;
     return (
       <Grid container>
         {comments.map((comment, index) => {
-          const {body, createdAt, userImage, userHandle} = comment;
+          const { body, createdAt, userImage, userHandle } = comment;
           return (
             <Fragment key={index}>
               <Grid item sm={12}>
@@ -34,14 +34,14 @@ class Comments extends Component {
                       <Typography variant="body2" color="textSecondary">
                         {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
                       </Typography>
-                      <hr className={classes.invisibleSeparator}/>
+                      <hr className={classes.invisibleSeparator} />
                       <Typography variant="body1">{body}</Typography>
                     </div>
                   </Grid>
                 </Grid>
               </Grid>
               {
-                index < comments.length - 1 && (<hr className={classes.visibleSeparator}/>)
+                index < comments.length - 1 && (<hr className={classes.visibleSeparator} />)
               }
             </Fragment>
           )

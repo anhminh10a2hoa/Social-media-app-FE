@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import PropTypes from 'prop-types';
-import {likeScream, unlikeScream} from '../../redux/actions/dataActions';
+import { likeScream, unlikeScream } from '../../redux/actions/dataActions';
 import MyButton from '../../util/MyButton';
 import DeleteScream from "./DeleteScream";
 import ScreamDialog from "./ScreamDialog";
@@ -53,7 +53,7 @@ class Scream extends Component {
       },
       user: {
         authenticated,
-        credentials: { handle} 
+        credentials: { handle }
       }
     } = this.props;
     const deleteButton = authenticated && userHandle === handle ? (
@@ -80,10 +80,10 @@ class Scream extends Component {
             {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
-          <LikeButton screamId={screamId}/>
+          <LikeButton screamId={screamId} />
           <span>{likeCount} Likes</span>
           <MyButton tip="comments">
-            <ChatIcon color="primary"/>
+            <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} Comments</span>
           <ScreamDialog screamId={screamId} userHandle={userHandle} />

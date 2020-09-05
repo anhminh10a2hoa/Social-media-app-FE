@@ -4,7 +4,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import MyButton from '../../util/MyButton';
 import LikeButton from './LikeButton';
 import Comments from './Comments.js';
-// import CommentForm from './CommentForm';
+import CommentForm from './CommentForm';
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 // MUI Stuff
@@ -59,37 +59,37 @@ class ScreamDialog extends Component {
         <CircularProgress size={200} thickness={2} />
       </div>
     ) : (
-      <Grid container spacing={16}>
-        <Grid item sm={5}>
-          <img src={userImage} alt="Profile" className={classes.profileImage} />
+        <Grid container spacing={16}>
+          <Grid item sm={5}>
+            <img src={userImage} alt="Profile" className={classes.profileImage} />
+          </Grid>
+          <Grid item sm={7}>
+            <Typography
+              component={Link}
+              color="primary"
+              variant="h5"
+              to={`/users/${userHandle}`}
+            >
+              @{userHandle}
+            </Typography>
+            <hr className={classes.invisibleSeparator} />
+            <Typography variant="body2" color="textSecondary">
+              {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
+            </Typography>
+            <hr className={classes.invisibleSeparator} />
+            <Typography variant="body1">{body}</Typography>
+            <LikeButton screamId={screamId} />
+            <span>{likeCount} likes</span>
+            <MyButton tip="comments">
+              <ChatIcon color="primary" />
+            </MyButton>
+            <span>{commentCount} comments</span>
+          </Grid>
+          <hr className={classes.visibleSeparator} />
+          <CommentForm screamId={screamId} />
+          <Comments comments={comments} />
         </Grid>
-        <Grid item sm={7}>
-          <Typography
-            component={Link}
-            color="primary"
-            variant="h5"
-            to={`/users/${userHandle}`}
-          >
-            @{userHandle}
-          </Typography>
-          <hr className={classes.invisibleSeparator} />
-          <Typography variant="body2" color="textSecondary">
-            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
-          </Typography>
-          <hr className={classes.invisibleSeparator} />
-          <Typography variant="body1">{body}</Typography>
-          <LikeButton screamId={screamId} />
-          <span>{likeCount} likes</span>
-          <MyButton tip="comments">
-            <ChatIcon color="primary" />
-          </MyButton>
-          <span>{commentCount} comments</span>
-        </Grid>
-        <hr className={classes.visibleSeparator} />
-        {/* <CommentForm screamId={screamId} /> */}
-        <Comments comments={comments} /> 
-      </Grid>
-    );
+      );
     return (
       <Fragment>
         <MyButton

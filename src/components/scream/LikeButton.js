@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MyButton from "../../util/MyButton";
 import PropTypes from 'prop-types';
 // Icons
@@ -27,7 +27,7 @@ class LikeButton extends Component {
     this.props.unlikeScream(this.props.screamId);
   }
   render() {
-    const {authenticated} = this.props.user;
+    const { authenticated } = this.props.user;
     const likeButton = !authenticated ? (
       <Link to="/login">
         <MyButton tip="Like">
@@ -39,10 +39,10 @@ class LikeButton extends Component {
         <FavoriteIcon color="primary" />
       </MyButton>
     ) : (
-      <MyButton tip="Like" onClick={this.likeScream}>
-        <FavoriteBorder color="primary" />
-      </MyButton>
-    );
+          <MyButton tip="Like" onClick={this.likeScream}>
+            <FavoriteBorder color="primary" />
+          </MyButton>
+        );
     return likeButton;
   }
 }
@@ -58,4 +58,4 @@ const mapStateToProps = (state) => ({
   user: state.user,
 })
 
-export default connect(mapStateToProps, {likeScream, unlikeScream})(LikeButton)
+export default connect(mapStateToProps, { likeScream, unlikeScream })(LikeButton)

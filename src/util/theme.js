@@ -120,5 +120,19 @@ export default {
       borderBottom: '1px solid rgba(0,0,0,0.1)',
       marginBottom: 20
     },
+  },
+  submitComment: {
+    textField: {
+      margin: "10px auto 10px auto",
+    },
+    button: {
+      marginTop: 20,
+      position: "relative",
+    },
+    visibleSeparator: {
+      width: '100%',
+      borderBottom: '1px solid rgba(0,0,0,0.1)',
+      marginBottom: 20
+    },
   }
 }

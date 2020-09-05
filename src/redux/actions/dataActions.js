@@ -1,4 +1,4 @@
-import { SET_SCREAMS, SET_SCREAM, LOADING_DATA, LIKE_SCREAM, UNLIKE_SCREAM, DELETE_SCREAM, LOADING_UI, STOP_LOADING_UI, POST_SCREAM, SET_ERRORS, CLEAR_ERRORS } from '../types'
+import { SET_SCREAMS, SET_SCREAM, LOADING_DATA, LIKE_SCREAM, UNLIKE_SCREAM, DELETE_SCREAM, LOADING_UI, STOP_LOADING_UI, POST_SCREAM, SUBMIT_COMMENT, SET_ERRORS, CLEAR_ERRORS } from '../types'
 import axios from 'axios'
 
 // GET ALL SCREAMS
@@ -59,6 +59,25 @@ export const unlikeScream = (screamId) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+//Submit comment
+export const submitComment = (screamId, commentData) => (dispatch) => {
+  axios
+    .post(`/scream/${screamId}/comment`, commentData)
+    .then((res) => {
+      dispatch({
+        type: SUBMIT_COMMENT,
+        payload: res.data
+      });
+      dispatch(clearErrors())
+    })
+    .catch((err) => {
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data
+      })
+    });
+}
+
 //Post a scream
 export const postScream = (newScream) => (dispatch) => {
   dispatch({ type: LOADING_UI });
@@ -69,9 +88,7 @@ export const postScream = (newScream) => (dispatch) => {
         type: POST_SCREAM,
         payload: res.data
       });
-      dispatch({
-        type: CLEAR_ERRORS
-      })
+      dispatch(clearErrors())
     })
     .catch((err) => {
       dispatch({
@@ -95,5 +112,5 @@ export const deleteScream = (screamId) => (dispatch) => {
 }
 
 export const clearErrors = () => (dispatch) => {
-  dispatch({type: CLEAR_ERRORS});
+  dispatch({ type: CLEAR_ERRORS });
 }

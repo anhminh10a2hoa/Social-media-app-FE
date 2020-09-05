@@ -59,4 +59,4 @@ DeleteScream.propTypes = {
   screamId: PropTypes.string.isRequired
 }
 
-export default connect(null, {deleteScream})(withStyles(styles)(DeleteScream));
+export default connect(null, { deleteScream })(withStyles(styles)(DeleteScream));
