@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Social media
 
-## Available Scripts
+Built using modern technologies: node.js, express, react.js, redux and firebase
 
-In the project directory, you can run:
+## Index
 
-### `yarn start`
+- [Demo](#demo)
+- [Features](#features)
+- [Installation](#installation)
+- [Author](#author)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo<a name="demo"></a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Check [Demo](https://social-app-7d922.web.app/)
 
-### `yarn test`
+## Features<a name="features"></a>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Use [Express](https://expressjs.com/) as the application Framework.
+- Use [Firebase](https://firebase.google.com/) as the database and deployment.
+- Use [React](https://reactjs.org/) for front-end.
 
-### `yarn build`
+## Installation<a name="installation"></a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running Locally
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  Clone or Download the repository
 
-### `yarn eject`
+    ```
+    $ git clone https://github.com/anhminh10a2hoa/Natours
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2.  Install Dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```
+    $ npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3.  Start the application
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+        ```
+        $ npm start
+        ```
 
-## Learn More
+    Your app should now be running on [localhost:3006](http://localhost:3006/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author<a name="author"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Name: Hoang Anh Minh <br>
+Email: hoanganhminh10a2hoa@gmail.com
