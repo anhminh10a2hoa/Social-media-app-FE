@@ -18,7 +18,10 @@ import {connect} from "react-redux"
 import {editUserDetails} from "../../redux/actions/userActions"
 
 const styles = (theme) => ({
-  ...theme.editUserDetails,
+  ...theme.main,
+  button: {
+    float: 'right'
+  }
 })
 
 class EditDetails extends Component {
